@@ -38,3 +38,55 @@
 sudo apt install zsh
 # Oh My Zsh 설치 (설치 스크립트 실행)
 sh -c "$(curl -fsSL [https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh))"
+
+### 2단계: (선택) Powerlevel10k 테마 설치
+
+이 저장소의 `p10k` 관련 설정은 [Powerlevel10k 테마](https://github.com/romkatv/powerlevel10k#oh-my-zsh) 설치를 권장합니다. (필수는 아님)
+
+### 3단계: 필수 의존성 도구 설치 (핵심)
+
+"FZF 3대장" 함수를 사용하기 위해 아래 도구들을 설치해야 합니다.
+
+```bash
+# 1. fzf (Fuzzy Finder)
+sudo apt install fzf
+
+# 2. ripgrep (rg) (내용 검색)
+sudo apt install ripgrep
+
+# 3. fd (fdfind) (파일/디렉터리 찾기)
+sudo apt install fd-find
+
+# 4. bat (batcat) (미리보기)
+sudo apt install bat
+
+# 5. lsd (미리보기) (Rust/Cargo 필요)
+# (Rust 설치 후) cargo install lsd
+
+### 4단계: 이 설정 적용하기
+
+이 레포지토리의 커스텀 설정을 님의 Zsh 환경에 적용합니다.
+
+1.  이 레포지토리를 원하는 위치에 `clone` 합니다.
+    ```bash
+    git clone [https://github.com/](https://github.com/)[Your_ID]/my-utils-zsh-settings.git ~/my-zsh-settings
+    ```
+2.  VS Code나 Vim으로 님의 `~/.zshrc` 파일을 엽니다.
+3.  `~/.zshrc` 파일의 **맨 아래**에 (Oh My Zsh 설정 이후) 다음 한 줄을 추가합니다.
+    ```zsh
+    # Load my custom settings
+    source ~/my-zsh-settings/my_custom_settings.zsh
+    ```
+4.  터미널을 다시 시작하면(`exec zsh`) `v`, `f`, `dd` 등의 모든 커스텀 함수와 별칭이 적용됩니다.
+
+---
+
+## ⚡️ `my_custom_settings.zsh`의 주요 별칭 (Aliases)
+
+* **`b`**: `batcat` (bat)
+* **`c`**: `clear`
+* **`p`**: `python3`
+* **`fd`**: `fdfind`
+* **`e`**: `explorer.exe .` (WSL에서 현재 폴더를 Windows 탐색기로 열기)
+* **`d`**: `dirs -v`
+* **`s`**: `pushd 1>/dev/null`
