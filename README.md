@@ -38,6 +38,7 @@
 sudo apt install zsh
 # Oh My Zsh 설치 (설치 스크립트 실행)
 sh -c "$(curl -fsSL [https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh))"
+```
 
 ### 2단계: (선택) Powerlevel10k 테마 설치
 
@@ -62,6 +63,7 @@ sudo apt install bat
 
 # 5. lsd (미리보기) (Rust/Cargo 필요)
 # (Rust 설치 후) cargo install lsd
+```
 
 ### 4단계: 이 설정 적용하기
 
@@ -90,3 +92,8 @@ sudo apt install bat
 * **`e`**: `explorer.exe .` (WSL에서 현재 폴더를 Windows 탐색기로 열기)
 * **`d`**: `dirs -v`
 * **`s`**: `pushd 1>/dev/null`
+
+
+
+
+
